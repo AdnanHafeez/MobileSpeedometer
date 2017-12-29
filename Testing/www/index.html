@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <title>My first testing app</title>
+</head>
+
+<body onload='draw(0);'>
+    <canvas id="tutorial" width="440" height="220">Canvas not available.</canvas>
+<div class="container-fluid text-center">
+</div>
+<div id="main-content" class = "container text-center">
+  <h4>The results will go here</h4>
+</div>
+    <div class="container text-center">
+      <button id="start-button" type="button" class="btn btn-primary btn-lg btn-block" onclick="startGettingLocation()">Get Current Speed</button>
+    </div>
+
+    <div id="result-content" class="container text-center">
+<dl>
+<!--
+      <dl>
+      <dt>Longitude</dt>
+      <dd id = "longitude">--Result Here--</dd>
+      <dt>Latitude</dt>
+      <dd id = "latitude">--Result Here--</dd>
+      <dt>Total Time</dt>
+      <dd id = "current_time">--Result Here--</dd>
+      <dt>Distance</dt>
+      <dd id = "distance">--Result Here--</dd>
+-->
+      <dt>Error Messages</dt>
+      <dd id = "ErrorLog">--Result Here--</dd>
+      </dl>
+
+      <dt>High Frequency</dt>
+      <dd>
+        <input type="checkbox" id="highfrequency">
+      </dd>
+      </dl>
+
+
+
+    </div>
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
