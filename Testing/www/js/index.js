@@ -2,7 +2,7 @@
 
   var startedLocation = false;
   var Point1 = {Latitude:-1,Longitude:-1,TimeStamp:0};
-  var speed_arr = [0,0,0,0,0,0,0,0,0,0];
+  var speed_arr = [0,0,0,0,0,0,0,0,0,0,0,0];
 
   function onDeviceReady() {
       console.log("Device Ready");
