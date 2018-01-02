@@ -2,6 +2,7 @@
 
   var startedLocation = false;
   var Point1 = {Latitude:-1,Longitude:-1,TimeStamp:0};
+  var speed_arr = [0,0,0,0,0,0,0,0,0,0];
 
   function onDeviceReady() {
       console.log("Device Ready");
@@ -63,13 +64,9 @@ function onSuccess(position)
     var timeS = (Point2.TimeStamp - Point1.TimeStamp) / 1000;
     var speedMPS = distanceinM / timeS;
     var speed = (speedMPS * 3600) / 1000;
-
-    //document.getElementById("latitude").innerHTML = Point2.Latitude;
-    //document.getElementById("longitude").innerHTML = Point2.Longitude;
-    //document.getElementById("current_time").innerHTML = timeS;
-    //document.getElementById("distance").innerHTML = distanceinM;
-    document.getElementById("main-content").innerHTML = "<h2>Speed: " +Math.round(speed)+ "Kmh </h2>";
-    drawWithInputValue(Math.round(speed));
+    //var averaged_speed = AverageOfSpeeds(Math.round(speed));
+    document.getElementById("main-content").innerHTML = "<h2>Speed: " +speed+ "Kmh </h2>";
+    drawWithInputValue(speed;
     Point1.Latitude = Point2.Latitude;
     Point1.Longitude = Point2.Longitude;
     Point1.TimeStamp = Point2.TimeStamp;
@@ -79,6 +76,25 @@ function onSuccess(position)
     alert("An error occurred in onSuccess: " + e.message );
   }
 }
+
+var AverageOfSpeeds = function(speed)
+{
+  try{
+  speed_arr.push(speed);
+  var total = 0;
+  if(speed_arr.length > 40)
+  {
+    speed_arr.shift();
+  }
+
+  speed_arr.forEach((x) => {total += x;});
+  return Math.round(total/speed_arr.length);
+} catch (e)
+{
+  alert("An error occurred in Average of Speeds: " + e.message );
+}
+}
+
 
 function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
   var R = 6371; // Radius of the earth in km
