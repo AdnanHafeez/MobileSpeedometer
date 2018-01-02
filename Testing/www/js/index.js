@@ -1,3 +1,5 @@
+/* Implement Javascript event handler for UI */
+
   document.addEventListener('deviceready',onDeviceReady, false);
 
   var startedLocation = false;
